@@ -1,28 +1,45 @@
 <h1 style="text-align: center;">{{title}}</h1>
 
-<form action="">
-    <label for="nombre">Nombre:</label>
-    <input type="text" [(ngModel)]="nombre" name="nombre"><br/>
-
-    <input type="text" [(ngModel)]="apellido" name="apellido"><br/>
-
-    <input type="submit" value="Registrar" (click)="registrarUsuario()">
-
-</form>
+<div class="container mt-5">
+    <form action="">
+        <div class="mt-3">
+            <label class="me-3" for="nombre">Nombre: </label>
+            <input type="text" [(ngModel)]="nombre" name="nombre"><br/>
+        </div>
+        <div class="mt-3">
+            <label class="me-3" for="apellido">Apellido: </label>
+            <input type="text" [(ngModel)]="apellido" name="apellido"><br/>
+        </div>
+        <div class="mt-3">
+            <label class="me-3" for="cargo">Cargo: </label>
+            <input type="text" [(ngModel)]="cargo" name="cargo"><br/>
+        </div>
+        <div class="mt-3">
+            <input class="btn btn-primary mt-4 ms-5" type="submit" value="Registrar" (click)="registrarUsuario()">
+        </div>
+    </form>
+</div>
 
 <br/>
 
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}} {{nombre}} {{apellido}}</p>
+<div class="container ">
 
-<ng-template #sinRegistrar>
+    <p class="mt-5" *ngIf="registrado; else sinRegistrar">{{mensaje}}
+         {{nombre}} {{apellido}} y tiene el cargo de <span [ngClass]="{paraDirectores: cargo == 'director'}">{{cargo}}</span></p>
 
-    <p>Nadie Registrado</p>
+        <ng-template #sinRegistrar>
 
-</ng-template>
+            <p class="mt-5">Nadie Registrado</p>
+
+        </ng-template>
+</div>
+
 
 <br/><br/>
 
-<ul>
-    <li style="list-style-type: none;" *ngFor="let entrada of entradas; let i=index; ">{{i+1}}-> <span style="font-size: larger; font-weight: bold;">{{entrada.titulo}}</span>
-    . Entrada {{i}}</li>
-</ul>
+<div class="container">
+    <ul>
+        <li style="list-style-type: none;" *ngFor="let entrada of entradas; let i=index; ">{{i+1}}-> <span style="font-size: larger; font-weight: bold;">{{entrada.titulo}}</span>
+        . Entrada {{i}}</li>
+    </ul>
+</div>
