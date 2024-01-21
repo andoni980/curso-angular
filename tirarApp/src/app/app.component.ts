@@ -10,7 +10,8 @@ export class AppComponent {
   mensaje= "awsdrfasef";
   registrado=false;
   nombre:string = "";
-  apellido:string= "";
+  apellido:string = "";
+  cargo:string = "";
   entradas: Array<{titulo:string}>;
 
   constructor(){
