@@ -1,0 +1,30 @@
+<p>Nombre del empleado: {{nombre}}</p>
+Introduce el nombre:<br/>
+<input style="margin-left: 2em;" type="text" [(ngModel)]="nombre">
+
+<p>Apellido del empleado: {{apellido}}</p>
+Introduce los apellidos:<br/>
+<input style="margin-left: 2em;" txype="text" [(ngModel)]="apellido">
+
+
+<p>Edad del empleado: {{edad >60 && edad < 65 ? edad + "-> " + 'Está por jubilarse' : edad + "-> " + 'Aún le queda para jubilarse'}}</p>
+<!-- <p>Edad del empleado: {{getEdad()}}</p> -->
+
+<!-- Introduce el nombre:<br/>
+<input style="margin-left: 2em;" type="text" #nombre (keyup)="nombre.value" [disabled]="habilitacionCuadro"> -->
+
+
+
+
+<br/>
+<br/>
+
+
+{{textoDeRegistro}}<br/>
+Registrado:
+<input type="radio" name="nRegistro" value="si" id="registro" [checked]="usuarioRegistrado" (click)="setUsuarioRegistrado($event)"/><br>
+No Registrado:
+<input type="radio" name="nRegistro" value="no" (click)="setUsuarioRegistrado($event)" />
+
+
+{{getRegistroUsuario()}}
